@@ -1,0 +1,78 @@
+{% extends "masutilapp/base.html"%}
+
+{% load static%}
+
+{% block content%}
+  <main class="pt-5 bg-primary">
+     
+<div class="container mt-5">
+    <div class="row">
+      <div class="col p-3 bg-warning text-white">
+        <div class="container">
+            <img src="utiles.jpg" class="mx-auto d-block rounded" alt="Paris" width="95%" height="95%">
+        </div><br>
+        <div class="container" >
+            <img src="unforme.jpg" class="mx-auto d-block rounded" alt="Paris" width="95%" height="95%">
+        </div>
+      </div>
+      <div class="col p-3 bg-primary text-white">
+        
+        <div class="container-md bg-secondary p-3">
+          
+          
+          
+            <form action="/action_page.php">
+              <div class="mb-3 mt-3 text-info">
+                <label for="nombre" >Nombre:</label>
+                <input type="text" class="form-control bg-primary" id="nombre" placeholder="Digite nombres" name="nombre">
+              </div>
+              <div class="mb-3 text-info">
+                <label for="apellido">Apellidos:</label>
+                <input type="text" class="form-control bg-primary" id="apellido" placeholder="Digite apellidos" name="apellido">
+              </div>
+              <div class="mb-3 mt-3 text-info">
+                <label for="email" >Email:</label>
+                <input type="email" class="form-control bg-primary" id="email" placeholder="Enter email" name="email">
+              </div>
+              <div class="mb-3 text-info">
+                <form action="/action_page.php">
+                  <div class="form-floating mb-3 mt-3 bg-primary">
+                    <select class="form-select bg-primary" id="sel1" name="sellist">
+                      <option>Tarjeta de identidad</option>
+                      <option>Cedula de ciudadania</option>
+                      <option>Cedula de extranjeria</option>
+                    
+                    </select>
+                    <label for="sel1" class="form-label">Selecccione tipo de NUIP (seleccione una):</label>
+                  </div>
+                  
+                </form>
+              </div>
+              <div class="mb-3 mt-3 text-info">
+                <label for="nuip" >NUIP:</label>
+                <input type="number" class="form-control bg-primary" id="tnuip" placeholder="Digite NUIP" name="nuip">
+              </div>
+              <div class="mb-3 text-info">
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" class="form-control bg-primary" id="fecha" placeholder="Digite fecha de nacimiento" name="fecha">
+              </div>
+              <div class="mb-3 text-info">
+                <label for="pwd">Contrasena:</label>
+                <input type="password" class="form-control bg-primary" id="pwd" placeholder="Digite contrasena" name="pswd">
+              </div>
+              <div class="form-check mb-3 text-info">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember"> Recordarme
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Registro</button>
+            </form>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+        
+  </main>
+{% endblock%}

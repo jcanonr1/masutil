@@ -1,0 +1,42 @@
+{% extends "masutilapp/base.html"%}
+
+{% load static%}
+
+{% block content%}
+    <main class="pt-5 bg-primary">
+        <div class="container mt-3 bg-primary">
+            <div class="container mt-3">
+                <div class="row">    
+                    <div class="col p-3">                                      
+                        <div class="form-floating mb-3 mt-3">
+                            <img src="perfil.png" alt="50%" width="50%">
+                        </div>                     
+                    </div>
+                    <div class="col p-3">                         
+                          <div class="mt-4 p-5 bg-secondary text-info rounded">     
+                            <h1>Julieta Román</h1> 
+                                <p>Calificación: 4.5 <br>
+                                    Número de calificaciones: 343 
+                                    <a href="calificacion.html">Ir</a>
+                                </p>                        
+                            </div>                                 
+                    </div>                        
+                    <div class="container-fluid mt-3">
+                        <div class="row">
+                            <div class="mt-4 p-5 bg-secondary text-info rounded">     
+                                <h1>Mensaje</h1> 
+                                    <p>Hola, mi nombre es Diego estoy interesado en el uniforme que publicaste ya hice la reserva me podrias informar cuando puedes realizar el intercambio
+                                    </p>                        
+                                </div>                               
+                        </div>
+                    </div>
+                    <div class="row">                        
+                            <div class="text-center">
+                                <button type="button" class="btn btn-secondary text-info active text-center">Enviar</button> 
+                            </div>                        
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </main>
+{% endblock%}

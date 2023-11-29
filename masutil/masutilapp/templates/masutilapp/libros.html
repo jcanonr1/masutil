@@ -1,0 +1,83 @@
+{% extends "masutilapp/base.html"%}
+
+{% load static%}
+
+{% block content%}
+<main class="pt-5 bg-primary">
+    <div class="container-fluid mt-5 bg-primary">
+    <div class="container-fluid mt-3">
+    <div class="row">
+        
+    
+    
+    
+<div class="col p-3">
+
+  
+  <form action="/action_page.php">
+    <div class="form-floating mb-3 mt-3">
+      <select class="form-select" id="sel1" name="sellist">
+        <option>Matematicas</option>
+        <option>Español</option>
+        <option>Sociales</option>
+        <option>Literatura</option>
+      </select>
+      <label for="sel1" class="form-label">Selecccione tipo de libro (seleccione una):</label>
+    </div>
+    
+  </form>
+</div>
+
+<div class="col p-3">
+    
+  
+        <form action="/action_page.php">
+          <div class="form-floating mb-3 mt-3">
+            <select class="form-select" id="sel2" name="sellist2">
+              <option>Primaria</option>
+              <option>Secundaria</option>
+              <option>Media académica</option>
+              <option>Educación superior</option>
+              
+            </select>
+            <label for="sel2" class="form-label">Seleccione grado (seleccione una):</label>
+          </div>
+          
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <button type="button" class="btn btn-secondary text-info active">Buscar</button>
+    </div>
+</div>
+    </div>
+    </div>
+    <div class="container-fluid mt-3">
+      <div class="row">
+          <div class="col">
+<!--   imagen -->
+          
+      <h2>Libro</h2>
+      <div class="card bg-warning text-primary" style="width:400">
+        <img class="card-img-top" src="librousado.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Literatura, educacion superior</h4>
+          
+          <a href="#" class="btn btn-secondary text-info">Reservar</a>
+        </div>
+      </div>
+          </div>
+          <div class="col">
+<!--   info -->
+            <h2>Descripción</h2>
+            <div class="mt-4 p-5 bg-secondary text-info rounded">
+              <h1>Libro de Matemáticas de grado segundo</h1> 
+              <p>Libro de matemáticas para grado segundo en estado 9/10, precio cómodo  </p> 
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+</main>
+{% endblock%}

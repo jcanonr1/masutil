@@ -1,0 +1,68 @@
+{% extends "masutilapp/base.html"%}
+
+{% load static%}
+
+{% block content%} 
+  <main class="pt-5 bg-primary">
+    <div class="container-fluid mt-3 bg-primary">
+    <div class="container-fluid mt-3">
+    <div class="row">
+    <div class="col p-3">
+
+  
+  <form action="/action_page.php">
+    <div class="form-floating mb-3 mt-3">
+      <select class="form-select" id="sel1" name="sellist">
+        <option>Para escribir</option>
+        <option>Para tomar apuntes</option>
+        <option>Para guardar otros útiles</option>
+        <option>Otro</option>
+      </select>
+      <label for="sel1" class="form-label">Selecccione tipo de útil (seleccione una):</label>
+    </div>
+    
+  </form>
+</div>
+
+      <div class="col p-3">
+    
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <button type="button" class="btn btn-secondary text-info active">Buscar</button>
+    </div>
+</div>
+    </div>
+    </div>
+    <div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+<!-- imagen -->
+
+    <h2>Útiles</h2>
+    <div class="card bg-warning text-primary" style="width:400">
+      <img class="card-img-top" src="utillapiz.JPG" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">Set de lapices y colores</h4>
+        <p>Precio: $1000<br>
+          Unidades: 10 <br>
+
+        </p>
+        <a href="#" class="btn btn-secondary text-info">Reservar</a>
+      </div>
+    </div>
+        </div>
+        <div class="col">
+<!-- info -->
+<h2>Descripción</h2>
+<div class="mt-4 p-5 bg-secondary text-info rounded">
+  <h1>Set de lapices y colores</h1> 
+  <p>Lapices y colores variados, con una vida util aun larga, a precio bajo</p> 
+</div>
+        </div>
+    </div>
+</div>
+</div>
+</main>
+{% endblock%}
