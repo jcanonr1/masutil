@@ -11,6 +11,13 @@ class compradores(models.Model):
     username=models.CharField(max_length=50);
     password=models.CharField(max_length=50,null=False);
 
+    class Meta:
+        verbose_name='comprador'
+        verbose_name_plural='compradores'
+
+    def __str__(self):
+        return self.documento;
+
 class vendedores(models.Model):
     id_vendedor=models.AutoField(primary_key=True);
     nombre=models.CharField(max_length=50, null=False);
@@ -19,23 +26,30 @@ class vendedores(models.Model):
     username=models.CharField(max_length=50);
     password=models.CharField(max_length=50,null=False);
 
+    class Meta:
+        verbose_name='vendedor'
+        verbose_name_plural='vendedores'
+
+    def __str__(self):
+        return self.documento;
+
 class facturaVenta(models.Model):
     id_factura=models.AutoField(primary_key=True);
-    id_comprador=models.ForeignKey(compradores);
+    id_comprador=models.ForeignKey(compradores, on_delete=models.CASCADE);
     orderDate=models.DateTimeField(auto_now_add=True);
     descripcion=models.CharField(max_length=100)
 
 class ordenPedido(models.Model):
     id_ordenPedido=models.AutoField(primary_key=True);
-    id_vendedor=models.ForeignKey(vendedores);
+    id_vendedor=models.ForeignKey(vendedores, on_delete=models.CASCADE);
     valor=models.IntegerField();
     medioDePago=models.CharField(max_length=50);
 
 class productos(models.Model):
     id_producto=models.IntegerField(primary_key=True);
-    id_categoria=models.ForeignKey(categoria);
-    id_factura=models.ForeignKey(facturaVenta);
-    id_ordenPedido=models.ForeignKey(ordenPedido);
+    id_categoria=models.ForeignKey(categoria, on_delete=models.CASCADE);
+    id_factura=models.ForeignKey(facturaVenta, on_delete=models.CASCADE);
+    id_ordenPedido=models.ForeignKey(ordenPedido, on_delete=models.CASCADE);
     autor=models.ForeignKey(User, on_delete=models.CASCADE);
     valor=models.IntegerField();
     descripcion=models.CharField(max_length=50);
@@ -50,7 +64,7 @@ class productos(models.Model):
 
 class retroalimentacion(models.Model):
     id_retroalimentacion=models.IntegerField(primary_key=True);
-    id_vendedor=models.ForeignKey(vendedores);
-    id_comprador=models.ForeignKey(compradores);
+    id_vendedor=models.ForeignKey(vendedores, on_delete=models.CASCADE);
+    id_comprador=models.ForeignKey(compradores, on_delete=models.CASCADE);
     puntaje=models.IntegerField();
     descripcion=models.CharField(max_length=50);
