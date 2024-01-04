@@ -63,7 +63,7 @@
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                   <strong>{{categoria.name}}</strong> 
+                   <strong>{{categoria.name}} </strong> 
                 </button>
               </h2>
               <div
@@ -73,7 +73,8 @@
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body">
-                  <p>{{categoria.descripcion}} <a href="uniformes.html"> Ir</a> 
+                  
+                    <p><a href="{% url 'Uniforme' categoria.id_categoria %}">{{categoria.descripcion}}</a> 
                     <img src="{{categoria.imagen.url}}" alt="">
                 </p>
                 </div>

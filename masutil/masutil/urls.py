@@ -22,5 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #SE ENLAZA EL ARCHIVO URLS DE LA APLICACION
     path('masutilapp/', include('masutilapp.urls')),
-    path('', include('servicios.urls')),
+    path('', include('servicios.urls')), ##AQUI SE ENCUENTRAN LAS CATEGORIAS O EL INDEX DE LA APP
+    path('comercio/', include('comercio.urls')),
+    path('contacto/', include('contactoapp.urls')),
+    path('carrito/', include('carrito.urls')),
+    path('autenticacion/', include('autenticacion.urls')),
 ]

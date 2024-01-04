@@ -40,7 +40,23 @@
         </div>
     </div>
     </div>
-</div>
+    
+  </div>
+  <div class="contenedorFormulario">
+<!-- Una vez se recibe la palabra valido que implica el envio de POST se muestra la comporbacion de que se ha recibido la informacion -->
+    {% if "valido" in request.GET %}
+    
+      <p style="text-align: center">La informacion ha sido enviada</p>
+
+    {% endif %}
+    <form action="" method="POST" style="text-align: center;">
+      {% csrf_token %}
+      <table style="margin: 20px auto;">
+      {{miformulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar" style="width: 150px;">
+  </form>
+  </div>
 </main>
 
 {% endblock%}

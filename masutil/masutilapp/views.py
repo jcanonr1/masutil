@@ -19,11 +19,8 @@ def sobrenos(request):
 def advertencia(request):
     return render(request,"masutilapp/advertencia.html")
 
-def calificacion(request):
-    return render(request,"masutilapp/calificacion.html")
 
-def contacto(request):
-    return render(request,"masutilapp/contact.html")
+
 
 #def cuaderno(request):
 #    return HttpResponse("Cuaderno")
@@ -37,8 +34,7 @@ def login(request):
 def mensaje(request):
     return render(request,"masutilapp/mensaje.html")
 
-def perfil(request):
-    return render(request,"masutilapp/perfil.html")
+
 
 def registro(request):
     return render(request,"masutilapp/registro.html")

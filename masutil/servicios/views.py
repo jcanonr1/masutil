@@ -6,3 +6,5 @@ def inicio(request):
 
     categorias=categoria.objects.all() #Se importan todas las catgeroias creadas 
     return render(request,"servicios/index.html",{"categorias":categorias})
+
+
