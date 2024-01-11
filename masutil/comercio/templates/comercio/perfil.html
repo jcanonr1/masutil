@@ -27,10 +27,10 @@
                                 <h3>Mis productos</h3>
                             </div>                        
                         </div>
-                        
+                        {% if user.is_authenticated %}
                         <div class="container-fluid mt-3">   
                             <div class="row">
-                                {%for comercio in publicacion%}
+                                {% for comercio in publicacion %}
                                 <div class="col-sm-4">   
                                     <div class="card bg-warning text-white">
                                         <img class="mx-auto d-block rounded" src="{{comercio.id_producto.imagen.url}}" alt="Card image" style="width:250px; height:250px" >
@@ -51,24 +51,20 @@
                                         </div>
                                     </div>                                                          
                                 </div>
-                                {%endfor%} 
+                                {% endfor %} 
                                                         
                             </div>
 
                             
                         </div>
-                       
-
-                        
-                        
-                            
-                            
+       
                     </div>
                     <div class="row">                        
                             <div class="text-center">
-                                <button type="button" class="btn btn-secondary text-info active text-center">Agregar</button> 
+                                <a href="{% url 'nuevo_producto' user.id %}" style="color: black;" >Agregar producto</a> 
                             </div>                        
                     </div>
+                    {% endif %}
                 </div>
             </div>           
         </div>

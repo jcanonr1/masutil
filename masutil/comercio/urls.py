@@ -7,8 +7,10 @@ from django.conf.urls.static import static
 
 urlpatterns=[
 
-    path('perfil',views.perfil, name='Perfil'),
-    path('perfil/Uniformes/<int:id_categoria_id>/', views.uniforme, name="Uniforme"),
+    path('perfil/<int:usuario_id>/',views.perfil, name='Perfil'),
+    path('perfil/NProductos/<int:usuario_id>/',views.n_producto, name='nuevo_producto'),
+    
+    path('perfil/Uniformes/<int:id_categoria_id>/', views.uniforme, name="Uniforme"),   
     path('perfil/Uniformes/2/', views.uniforme, name="Uniforme2"),#linea provisional para que funcione carrito con id categoria =2
 ]
 #permite acceso a media

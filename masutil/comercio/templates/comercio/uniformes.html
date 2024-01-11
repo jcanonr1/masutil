@@ -17,27 +17,37 @@
 
             <div class="container-fluid mt-3">
               <div style="float:right ;">
+
+              {% if request.user.is_authenticated %}
                 {% include "carrito/widget.html" %}
+
+              {% else %}
+                <p>Login requerido para ver carro</p>
+              {% endif %}
+
               <!-- <p>Total:  ${{importe_total_carrito}}</p> -->
               </div>
+              <div class="row">
               {% for comercio in publicacion%}
-                <div class="row">
+                
                     <div class="col-sm-4">
     <!-- imagen -->
-                        
+    <!-- COMERCIO ES EQUIVALENTE A PUBLICACION SE LLAMA ASI PORQUE YA ASI SE DENOMINADA LOS ARCHIVOS MEDIA -->
+                      <div class="card bg-warning text-white">
                         <h3>{{comercio.id_producto}}</h3>
-                        <div class="card bg-warning text-primary" style="width:400">
-                            <img src="{{comercio.id_producto.imagen.url}}" alt="Card image" style="width:100%">
+                        
+                            <img  class="mx-auto d-block rounded" src="{{comercio.id_producto.imagen.url}}" alt="Card image" style="width:100%">
                             <div class="card-body text-center">
                               <h4 class="card-title">{{comercio.id_producto.descripcion}}</h4>  
                               <h4 class="card-title">${{comercio.id_producto.valor}}</h4>
                                 <a href="{% url 'carrito:agregar' comercio.id_producto.id_producto %}" class="btn btn-success text-info">Agregar al carro</a>
                             </div>
-                        </div>
+                        
+                      </div>
                     </div>
-                    
-                </div>
+                
                 {%endfor%}
+              </div>
             </div>
         </div>
     </main>

@@ -24,6 +24,15 @@
           
             <form method="POST" action="">
               {% csrf_token %}
+<!-- si hay mensajes lso debe mostrar -->
+              {% if messages %}
+                {% for mensaje in messages %}
+                <span class="alert-alert-{{mensaje.tags}}">
+                  {{mensaje}}
+                </span>
+                {% endfor %}
+              
+              {% endif %}
               {{ form }}
               <!-- <div class="mb-3 mt-3 text-info">
                 <label for="nombre" >Nombre:</label>
@@ -70,7 +79,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Registro</button> -->
               
-              <button type="submit" class="btn btn-success">Registro</button>
+              <button type="submit" class="btn btn-success">Loguin</button>
             </form>
         </div>
     </div>

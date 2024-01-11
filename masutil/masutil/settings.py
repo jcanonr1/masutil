@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+from django.contrib.messages import constants as mensajes_error #importacion necesaria para mostrar mensajes de advertencia y todoslos tags
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,5 +148,15 @@ EMAIL_PORT=587;
 EMAIL_HOST_USER="username";
 EMAIL_HOST_PASSWORD="password";
 
+#para arreglar los formularios de usercreationform
+CRISPY_TEMPLATE_PACK="bootstrap5"
 
-CRISPY_TEMPLATE_PACK="bootstrap3"
+MESSAGE_TAGS={
+#permite usar cualquier tipo de error en las plantillas
+    mensajes_error.DEBUG:'debug',
+    mensajes_error.INFO:'info',
+    mensajes_error.SUCCESS:'success',
+    mensajes_error.WARNING:'warning',
+    mensajes_error.ERROR:'danger',
+
+}

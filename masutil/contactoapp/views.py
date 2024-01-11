@@ -23,9 +23,11 @@ def contacto(request):
             
             except:
                 return redirect("/contacto/?novalido")
+          
             
-            
-            return redirect("/contacto/?valido") #CON ESTO SE REDIRIGE A LA PAGINA DE CONTACTO UNA VEZ SE HA HECHO LA PETICION POST, NO ANTES
+        return redirect("/contacto/?valido") #CON ESTO SE REDIRIGE A LA PAGINA DE CONTACTO UNA VEZ SE HA HECHO LA PETICION POST, NO ANTES
+    else:
+        print("no util") 
     return render(request,"contacto/contact.html",{"miformulario":formulario_contacto})
 
 
