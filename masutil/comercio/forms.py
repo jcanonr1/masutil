@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import productos
+from .models import productos, retroalimentacion
 
 class nproductoForm(forms.ModelForm):
 
@@ -21,6 +21,16 @@ class nproductoForm(forms.ModelForm):
             'class': 'form-select'
         })
       
-    
-        
+
+class new_calificationForm(forms.Form):
+    opciones = (
+         ("1","uno"),
+         ("2","dos"),
+         ("3","tres"),
+         ("4","cuatro"),
+         ("5","cinco"),
+     )
+    puntaje = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=opciones, )
+                                           
+    descripcion=forms.CharField(label="Descripcon",required=True, max_length=750,widget=forms.Textarea);
     

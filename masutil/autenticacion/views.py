@@ -3,19 +3,32 @@ from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django import forms
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 #En lugar de crear los views, se crea una clase que permite manejar los metodos 
 #get y post para llevar la informacion de los usuarios que se registren a la base de datos
+class formulario_registro(UserCreationForm):
+    email= forms.EmailField(required=True, help_text="Requerido, debe ser un email valido")
+    first_name= forms.CharField(required=False)
+    last_name= forms.CharField(required=False)
+
+    class Meta:
+        model = User
+        fields=("first_name","last_name","username","email","password1","password2")
+
+     
 class Vista_registro(View):
 
     def get(self, request):#Funcion encargada de mostrar el formulario 
-        form=UserCreationForm()
+        form=formulario_registro()
         return render(request, "autenticacion/registro.html", {"form":form})
 
 
     def post(self, request):# metodo encargado del envio de la informacion
-        form=UserCreationForm(request.POST)#Trae la informacion presente en el formulario
+        form=formulario_registro(request.POST)#Trae la informacion presente en el formulario
         
         if form.is_valid():
         

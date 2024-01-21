@@ -20,6 +20,12 @@ class carrito:
                 "nombre":publicaciones.id_producto.nombre_producto,
                 "precio":str(publicaciones.id_producto.valor),
                 "cantidad":1,
+
+                
+                "usuario":publicaciones.id_usuario.username,
+                "correo":publicaciones.id_usuario.email,
+                "descripcion":publicaciones.id_producto.descripcion,
+                "publicacion_id":publicaciones.id_publicacion,
         
             }
             #print("nueevo ingreso   ")

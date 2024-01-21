@@ -39,7 +39,7 @@ class facturaVenta(models.Model):
     orderDate=models.DateTimeField(auto_now_add=True);
     valor=models.IntegerField();
     descripcion=models.CharField(max_length=100)
-    medioDePago=models.CharField(max_length=50);
+    medioDePago=models.CharField(max_length=50, null=True);
 
 class publicaciones(models.Model):
     id_publicacion=models.AutoField(primary_key=True);

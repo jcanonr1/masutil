@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'carrito',
     'autenticacion',
     'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -149,6 +150,7 @@ EMAIL_HOST_USER="username";
 EMAIL_HOST_PASSWORD="password";
 
 #para arreglar los formularios de usercreationform
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK="bootstrap5"
 
 MESSAGE_TAGS={

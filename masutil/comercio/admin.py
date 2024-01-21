@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import productos, publicaciones
+from .models import productos, publicaciones, ventas, facturaVenta
 from servicios.models import categoria
 
 # Register your models here.
@@ -12,3 +12,5 @@ class categoriaAdmin(admin.ModelAdmin):
 #admin.site.register(categoria,categoriaAdmin);
 admin.site.register(productos);
 admin.site.register(publicaciones);
+admin.site.register(ventas);
+admin.site.register(facturaVenta);
