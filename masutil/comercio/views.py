@@ -49,8 +49,10 @@ def calificacion(request, publicacion_id):
         if formulario_calificacion.is_valid():
             puntaje=request.POST.get("puntaje");#se guaradn en variables los datos suministrados por el usuario
             descripcion=request.POST.get("descripcion");
-            calificar=retroalimentacion(id_usuario=request.user,id_publicacion=publicacion_id,puntaje=puntaje,descripcion=descripcion);
+            calificar=retroalimentacion(id_usuario=request.user,id_publicacion_id=publicacion_id,puntaje=puntaje,descripcion=descripcion);
             calificar.save()
+
+        return redirect("Factura")
     return render(request,"comercio/calificacion.html",{"calificacion":formulario_calificacion})
 
 
@@ -80,10 +82,12 @@ def procesar_factura(request):
 
         ))
         usuario=value["usuario"]
+        
         correo=value["correo"]
         producto_actual=value["producto_id"];
-        publicacion=value["publicacion_id"];
-    print(publicacion)
+        publicacions=publicaciones.objects.get(id_producto=producto_actual);
+        publicacion_id=publicacions.id_publicacion;
+    print(publicacions)
     
     #con este metodo se inserta en la base de datos es como tener muchos insert into
     ultimas_facturas=facturaVenta.objects.bulk_create(productosFactura)
@@ -106,7 +110,7 @@ def procesar_factura(request):
     #    )
 #
     #messages.success(request, "El pedido se ha creado correctamente")
-    return redirect("Calificar",publicacion)
+    return redirect("Calificar",publicacion_id)
 
 def enviar_mail(**kwargs):# De esta manera a funcion esta preparada para recibir una cantidad indetermindada de argumentos
     asunto=" Reserva completada",

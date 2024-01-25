@@ -23,6 +23,7 @@ class carrito:
 
                 
                 "usuario":publicaciones.id_usuario.username,
+                
                 "correo":publicaciones.id_usuario.email,
                 "descripcion":publicaciones.id_producto.descripcion,
                 "publicacion_id":publicaciones.id_publicacion,
