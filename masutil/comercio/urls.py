@@ -9,10 +9,12 @@ urlpatterns=[
 
     path('perfil/<int:usuario_id>/',views.perfil, name='Perfil'),
     path('perfil/NProductos/<int:usuario_id>/',views.n_producto, name='nuevo_producto'),
-    
+    path('perfil/EProductos/<int:producto_id>//<int:usuario_id>/',views.e_producto, name='elimina_producto'),
+    path('perfil/Editar/<int:producto_id>//<int:usuario_id>/',views.editar,name="editar"),
     path('perfil/Uniformes/<int:id_categoria_id>/', views.uniforme, name="Uniforme"),
     path('perfil/factura/', views.procesar_factura, name="Factura"),
-    path('perfil/calificar/<int:publicacion_id>/', views.calificacion, name="Calificar"),   
+    path('perfil/calificar/<int:publicacion_id>/', views.calificacion, name="Calificar"), 
+    path('perfil/micalifica/<int:usuario_id>/', views.mi_calificacion, name="mi_calificacion"),   
     
     path('perfil/Uniformes/2/', views.uniforme, name="Uniforme2"),#linea provisional para que funcione carrito con id categoria =2
 ]

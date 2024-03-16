@@ -17,7 +17,9 @@
                             <h1>{{publicacion.id_usuario.name}}</h1> 
                                 <p>Calificación: 4.5 <br>
                                     Número de calificaciones: 343  
-                                    <a href="calificacion.html">Ir</a> 
+                                    <div class="text-center">
+                                        <a href="{% url 'mi_calificacion' user.id %}" style="color: black;" >Ir a mis calificaciones</a> 
+                                    </div> 
                                 </p>                        
                             </div>                                 
                     </div>                        
@@ -39,12 +41,12 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="text-center">
-                                                        <button type="button" class="btn btn-secondary text-info active text-center">Editar</button> 
+                                                        <a href="{% url 'editar' comercio.id_producto.id_producto user.id %}">Editar</a>  
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="text-center">
-                                                        <button type="button" class="btn btn-secondary text-info active text-center">Remover</button> 
+                                                        <a href="{% url 'elimina_producto' comercio.id_producto.id_producto user.id %}">Remover</a> 
                                                     </div>
                                                 </div>  
                                             </div>

@@ -1,0 +1,24 @@
+{% extends "masutilapp/base.html"%}
+
+{% load static%}
+
+{% block content%}
+    <main class="pt-5 bg-primary">
+        <div class="container mt-3 bg-primary">
+            <div class="container mt-3">
+                <div class="row">    
+                    {% for feedback in retro %}
+                        <div>
+                            <h4>{{feedback.id_usuario}}</h4>
+                            <h4>{{feedback.puntaje}}</h4>
+                            <h4>{{feedback.descripcion}}</h4>
+                            <h4>{{feedback.id_publicacion}}</h4>
+                            
+                        </div>
+                    {% endfor %}
+                
+                </div>
+            </div>           
+        </div>
+    </main>
+{% endblock%}

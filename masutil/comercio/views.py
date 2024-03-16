@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from comercio.models import publicaciones, productos, User, facturaVenta, ventas, retroalimentacion
 from carrito.carrito import carrito
 from django.contrib import messages
-from .forms import nproductoForm, new_calificationForm
+from .forms import nproductoForm, new_calificationForm, edicionForm
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import send_mail
@@ -40,6 +40,10 @@ def n_producto(request,usuario_id):
         #print("no utl")
     return render(request,"comercio/nuevos_productos.html",{"prodnuevo":productoNuevo})
 
+def editar(request,producto_id, usuario_id):
+    edicion_producto=edicionForm;
+    
+    redirect("nuevo_producto", usuario_id);
 
         
 def calificacion(request, publicacion_id):
@@ -55,8 +59,17 @@ def calificacion(request, publicacion_id):
         return redirect("Factura")
     return render(request,"comercio/calificacion.html",{"calificacion":formulario_calificacion})
 
+def mi_calificacion(request,usuario_id):#Debe llamarse igual al que esta en la url
+    
+    feedback=retroalimentacion.objects.filter(id_usuario=usuario_id);
+  
+    
+    return render(request, "comercio/micalificacion.html",{"retro":feedback})
 
-
+def e_producto(request, producto_id, usuario_id):
+    mi_producto=publicaciones.objects.filter(id_producto=producto_id);
+    mi_producto.delete()
+    return redirect("Perfil", usuario_id)
 
 
 def uniforme(request,id_categoria_id):
